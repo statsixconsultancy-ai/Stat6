@@ -89,11 +89,11 @@ You can control cookie preferences through your browser settings.`,
 - Opt-out of marketing communications
 - Data portability where applicable
 
-To exercise these rights, contact us at privacy@stat6.com.`,
+To exercise these rights, contact us at privacy@statsix.com.`,
               },
               {
                 title: "7. Contact",
-                content: `For privacy-related queries, contact our Data Protection team at privacy@stat6.com or through our Contact page.`,
+                content: `For privacy-related queries, contact our Data Protection team at privacy@statsix.com or through our Contact page.`,
               },
             ].map((section) => (
               <div key={section.title}>

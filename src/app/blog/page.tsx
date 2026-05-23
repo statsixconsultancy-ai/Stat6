@@ -22,10 +22,8 @@ const jsonLd = {
   "@type": "Blog",
   name: "Stat6 Research Blog",
   description: "Expert articles for life science researchers, PhD scholars, and academic writers",
-  url: "
-statsix.com/blog",
-  publisher: { "@type": "Organization", name: "Stat6", url: "
-statsix.com" },
+  url: absoluteUrl('/blog'),
+  publisher: { "@type": "Organization", name: "Stat6", url: absoluteUrl('/') },
 };
 
 export default function BlogPage() {

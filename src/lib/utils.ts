@@ -35,8 +35,7 @@ export function truncate(text: string, length: number): string {
 }
 
 export function absoluteUrl(path: string): string {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "
-statsix.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://statsix.com";
   return `${baseUrl}${path}`;
 }
 

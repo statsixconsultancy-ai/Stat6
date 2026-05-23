@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: absoluteUrl("/"),
     title: "Stat6 — Research & Publication Support for Life Science Scholars",
     description:
-      "From research design to SCI-indexed publication — expert statistical analysis, bioinformatics, and manuscript support for life science researchers.",
+      "From research design to SCI-indexed publication — expert statistical analysis, bioinformatics, and manuscript support.",
     images: [{ url: absoluteUrl("/og-image.png"), width: 1200, height: 630 }],
   },
   twitter: {
@@ -49,21 +49,18 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "
-statsix.com/#organization",
+      "@id": absoluteUrl('/#organization'),
       name: "Stat6",
-      url: "
-statsix.com",
+      url: absoluteUrl('/'),
       logo: {
         "@type": "ImageObject",
-        url: "
-statsix.com/logo.png",
+        url: absoluteUrl('/logo.png'),
       },
       description:
         "Premium research support and scientific publication assistance for life science scholars",
       contactPoint: {
         "@type": "ContactPoint",
-        email: "research@stat6.com",
+        email: "research@statsix.com",
         contactType: "customer service",
         availableLanguage: ["English", "Hindi"],
       },
@@ -75,31 +72,25 @@ statsix.com/logo.png",
     },
     {
       "@type": "WebSite",
-      "@id": "
-statsix.com/#website",
-      url: "
-statsix.com",
+      "@id": absoluteUrl('/#website'),
+      url: absoluteUrl('/'),
       name: "Stat6",
       description: "Research & Publication Support Platform for Life Science Scholars",
-      publisher: { "@id": "
-statsix.com/#organization" },
+      publisher: { "@id": absoluteUrl('/#organization') },
       potentialAction: {
         "@type": "SearchAction",
-        target: { "@type": "EntryPoint", urlTemplate: "
-statsix.com/search?q={search_term_string}" },
+        target: { "@type": "EntryPoint", urlTemplate: absoluteUrl('/search?q={search_term_string}') },
         "query-input": "required name=search_term_string",
       },
     },
     {
       "@type": "ProfessionalService",
-      "@id": "
-statsix.com/#service",
+      "@id": absoluteUrl('/#service'),
       name: "Stat6 Research Support",
-      image: "
-statsix.com/og-image.png",
+      image: absoluteUrl('/og-image.png'),
       priceRange: "$$",
       telephone: "+91-99999-99999",
-      email: "research@stat6.com",
+      email: "research@statsix.com",
       address: {
         "@type": "PostalAddress",
         addressCountry: "IN",

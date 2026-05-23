@@ -281,7 +281,7 @@ Access the admin dashboard at `/admin`.
 
 ## 📧 Support
 
-For questions about the platform setup, contact: research@stat6.com
+For questions about the platform setup, contact: research@statsix.com
 
 ---
 

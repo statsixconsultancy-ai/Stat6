@@ -129,11 +129,9 @@ export default async function ServiceCategoryPage({ params }: Props) {
         "@type": "Service",
         name: `${cat.title} — Stat6`,
         description: cat.description,
-        provider: { "@type": "Organization", name: "Stat6", url: "
-statsix.com" },
+        provider: { "@type": "Organization", name: "Stat6", url: absoluteUrl('/') },
         serviceType: cat.title,
-        url: `
-statsix.com/services/${cat.slug}`,
+           url: absoluteUrl(`/services/${cat.slug}`),
         areaServed: "Worldwide",
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -156,12 +154,9 @@ statsix.com/services/${cat.slug}`,
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "
-statsix.com" },
-          { "@type": "ListItem", position: 2, name: "Services", item: "
-statsix.com/services" },
-          { "@type": "ListItem", position: 3, name: cat.title, item: `
-statsix.com/services/${cat.slug}` },
+             { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl('/') },
+             { "@type": "ListItem", position: 2, name: "Services", item: absoluteUrl('/services') },
+             { "@type": "ListItem", position: 3, name: cat.title, item: absoluteUrl(`/services/${cat.slug}`) },
         ],
       },
     ],

@@ -83,11 +83,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href="mailto:research@stat6.com"
+                href="mailto:research@statsix.com"
                 className="flex items-center gap-2.5 text-sm text-[rgba(240,255,230,0.7)] hover:text-[#5CE81B] transition-colors"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                research@stat6.com
+                research@statsix.com
               </a>
               <a
                 href="tel:+919999999999"

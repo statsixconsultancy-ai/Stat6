@@ -29,8 +29,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "
-statsix.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://statsix.com"),
   title: {
     default: "Stat6 — Research & Publication Support for Life Science Scholars",
     template: "%s | Stat6",
@@ -51,8 +50,7 @@ statsix.com"),
     "academic research",
     "biostatistics",
   ],
-  authors: [{ name: "Stat6 Research Team", url: "
-statsix.com" }],
+  authors: [{ name: "Stat6 Research Team", url: "https://statsix.com" }],
   creator: "Stat6",
   publisher: "Stat6",
   robots: {

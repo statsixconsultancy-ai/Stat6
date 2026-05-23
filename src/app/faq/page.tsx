@@ -214,7 +214,7 @@ export default function FAQPage() {
                   Contact Us
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="mailto:research@stat6.com" className="btn-secondary text-sm">
+                <a href="mailto:research@statsix.com" className="btn-secondary text-sm">
                   Email Us Directly
                 </a>
               </div>

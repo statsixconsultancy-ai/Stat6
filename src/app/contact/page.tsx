@@ -15,9 +15,9 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "research@stat6.com",
+    value: "research@statsix.com",
     sub: "Respond within 24 hours",
-    href: "mailto:research@stat6.com",
+    href: "mailto:research@statsix.com",
   },
   {
     icon: Phone,
@@ -149,7 +149,7 @@ export default function ContactPage() {
               {/* Direct Links */}
               <div className="mt-6 flex flex-col gap-2.5">
                 <a
-                  href="mailto:research@stat6.com"
+                  href="mailto:research@statsix.com"
                   className="flex items-center gap-3 p-3 rounded-xl bg-white/60 border border-[rgba(13,47,4,0.08)] text-sm font-medium text-[#0d2f04] hover:bg-white hover:shadow-[0_2px_8px_rgba(13,47,4,0.06)] transition-all"
                 >
                   <Mail className="w-4 h-4 text-[#5CE81B]" />

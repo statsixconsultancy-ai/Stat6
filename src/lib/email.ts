@@ -80,10 +80,9 @@ function baseEmailTemplate(content: string, subject: string): string {
       </div>
       ${content}
       <div class="footer">
-        <p class="footer-text">
-          Stat6 Research Platform · <a href="
-statsix.com" class="footer-link">stat6.com</a><br>
-          Premium research support for life science scholars · <a href="mailto:research@stat6.com" class="footer-link">research@stat6.com</a>
+          <p class="footer-text">
+          Stat6 Research Platform · <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://statsix.com'}" class="footer-link">statsix.com</a><br>
+          Premium research support for life science scholars · <a href="mailto:research@statsix.com" class="footer-link">research@statsix.com</a>
         </p>
       </div>
     </div>
@@ -206,13 +205,12 @@ export async function sendEnquiryEmails(data: EnquiryData): Promise<void> {
           </div>`).join("")}
       </div>
 
-      <a href="
-statsix.com/services" class="cta-button">Explore Our Services</a>
+      <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://statsix.com'}/services" class="cta-button">Explore Our Services</a>
 
       <div class="divider"></div>
       <p style="font-size: 13px; color: #5a8a50; line-height: 1.6;">
         For urgent enquiries, you can also reach us at
-        <a href="mailto:research@stat6.com" style="color: ${brandColor}; font-weight: 600;">research@stat6.com</a>
+        <a href="mailto:research@statsix.com" style="color: ${brandColor}; font-weight: 600;">research@statsix.com</a>
         or WhatsApp <a href="https://wa.me/919999999999" style="color: ${brandColor}; font-weight: 600;">+91 99999 99999</a>
       </p>
     </div>`;

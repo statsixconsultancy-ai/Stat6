@@ -59,15 +59,13 @@ const jsonLd = {
   "@type": "ItemList",
   name: "Stat6 Research Support Services",
   description: "Academic research support services for life science scholars",
-  url: "
-statsix.com/services",
+  url: absoluteUrl('/services'),
   numberOfItems: SERVICE_CATEGORIES.length,
   itemListElement: SERVICE_CATEGORIES.map((cat, i) => ({
     "@type": "ListItem",
     position: i + 1,
     name: cat.title,
-    url: `
-statsix.com/services/${cat.slug}`,
+    url: absoluteUrl(`/services/${cat.slug}`),
     description: cat.description,
   })),
 };
