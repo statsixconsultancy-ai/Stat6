@@ -1,0 +1,442 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================
+   STAT6 DESIGN SYSTEM — GLOBAL STYLES
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* Brand Colors */
+  --color-bg: #f0ffe6;
+  --color-bg-secondary: #ddfdca;
+  --color-bg-tertiary: #bcfb9b;
+  --color-accent: #5CE81B;
+  --color-dark: #0d2f04;
+  --color-black: #000000;
+
+  /* Typography */
+  --font-heading: 'Urbanist', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --section-padding: 6rem;
+  --container-max: 1440px;
+  --container-padding: 1.5rem;
+
+  /* Borders */
+  --border-subtle: rgba(13, 47, 4, 0.08);
+  --border-medium: rgba(13, 47, 4, 0.14);
+
+  /* Shadows */
+  --shadow-soft: 0 1px 3px rgba(13, 47, 4, 0.06), 0 1px 2px rgba(13, 47, 4, 0.04);
+  --shadow-card: 0 0 0 1px rgba(13, 47, 4, 0.06), 0 4px 16px rgba(13, 47, 4, 0.06);
+  --shadow-card-hover: 0 0 0 1px rgba(13, 47, 4, 0.1), 0 8px 24px rgba(13, 47, 4, 0.08);
+}
+
+/* ================================================
+   BASE RESET & DEFAULTS
+   ================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ================================================
+   TYPOGRAPHY SYSTEM
+   ================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+}
+
+h1 { font-size: clamp(2.25rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.875rem); }
+h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p {
+  font-family: var(--font-body);
+  color: #3a6e30;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* ================================================
+   COMPONENT LAYER
+   ================================================ */
+
+@layer components {
+
+  /* Container */
+  .container-stat6 {
+    @apply w-full mx-auto px-6 lg:px-8;
+    max-width: var(--container-max);
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  .section-padding-sm {
+    @apply py-14 lg:py-20;
+  }
+
+  /* Section Label */
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest;
+    color: #4a7c3f;
+    letter-spacing: 0.12em;
+  }
+
+  .section-label::before {
+    content: '';
+    @apply w-4 h-px block;
+    background-color: var(--color-accent);
+  }
+
+  /* Heading Accent */
+  .heading-accent {
+    background: linear-gradient(135deg, #0d2f04 0%, #2a6e1a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Card Base */
+  .card-base {
+    @apply rounded-2xl border transition-all duration-300;
+    background: rgba(255, 255, 255, 0.7);
+    border-color: var(--border-subtle);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(8px);
+  }
+
+  .card-base:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--border-medium);
+    transform: translateY(-2px);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200;
+    background: var(--color-black);
+    color: #f0ffe6;
+    font-family: var(--font-heading);
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover {
+    background: #1a1a1a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200;
+    background: transparent;
+    color: var(--color-dark);
+    border: 1.5px solid var(--border-medium);
+    font-family: var(--font-heading);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-dark);
+    background: rgba(13, 47, 4, 0.04);
+    transform: translateY(-1px);
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200;
+    background: var(--color-accent);
+    color: var(--color-dark);
+    font-family: var(--font-heading);
+  }
+
+  .btn-accent:hover {
+    background: #4dd416;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(92, 232, 27, 0.3);
+  }
+
+  /* Input Base */
+  .input-base {
+    @apply w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200;
+    background: #ffffff;
+    border: 1.5px solid var(--border-subtle);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+  }
+
+  .input-base:focus {
+    border-color: var(--color-dark);
+    box-shadow: 0 0 0 3px rgba(13, 47, 4, 0.06);
+  }
+
+  .input-base::placeholder {
+    color: #8ab080;
+  }
+
+  /* Tag / Badge */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background: var(--color-bg-secondary);
+    color: #3a6e30;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .tag-dark {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background: var(--color-dark);
+    color: var(--color-bg);
+  }
+
+  /* Divider */
+  .divider {
+    @apply w-full h-px;
+    background: var(--border-subtle);
+  }
+
+  /* Grid Patterns */
+  .bg-grid {
+    background-image: var(--tw-gradient-stops, linear-gradient(rgba(13, 47, 4, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(13, 47, 4, 0.03) 1px, transparent 1px));
+    background-size: 32px 32px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(13, 47, 4, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Stat Number */
+  .stat-number {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -0.04em;
+    color: var(--color-dark);
+    line-height: 1;
+  }
+
+  /* Prose Override for Blog */
+  .prose-stat6 {
+    @apply max-w-none;
+    color: #2a5022;
+  }
+
+  .prose-stat6 h1, .prose-stat6 h2, .prose-stat6 h3, .prose-stat6 h4 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+  }
+
+  .prose-stat6 a {
+    color: var(--color-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose-stat6 code {
+    @apply px-1.5 py-0.5 rounded text-sm;
+    background: var(--color-bg-secondary);
+    color: var(--color-dark);
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* ================================================
+   UTILITY LAYER
+   ================================================ */
+
+@layer utilities {
+
+  /* Text Balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    background: linear-gradient(135deg, #0d2f04 0%, #2a6e1a 50%, #0d2f04 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass Effect */
+  .glass {
+    background: rgba(240, 255, 230, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-white {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Scroll Margin for anchor links */
+  .scroll-mt-nav {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(0.5deg); }
+  66% { transform: translateY(-4px) rotate(-0.5deg); }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 200; }
+  to { stroke-dashoffset: 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-delay-2 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.animate-draw {
+  stroke-dasharray: 200;
+  animation: drawLine 2s ease-in-out forwards;
+}
+
+/* ================================================
+   SCROLLBAR STYLING
+   ================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0d8a0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8ab080;
+}
+
+/* ================================================
+   SELECTION
+   ================================================ */
+
+::selection {
+  background: rgba(92, 232, 27, 0.25);
+  color: var(--color-dark);
+}
+
+/* ================================================
+   FOCUS STYLES (Accessibility)
+   ================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ================================================
+   PRINT STYLES
+   ================================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}
